@@ -23,9 +23,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sortings", "Sortings", "{DD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Primitive", "Primitive", "{39144EDA-2EE7-4445-BF32-AA1F0650B6D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BubbleSort", "Algorithms\Sortings\Primitive\BubbleSort\BubbleSort.csproj", "{7B496078-E861-4885-A7FE-17C78265EAB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BubbleSort", "Algorithms\Sortings\Primitive\BubbleSort\BubbleSort.csproj", "{7B496078-E861-4885-A7FE-17C78265EAB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelectionSort", "Algorithms\Sortings\Primitive\SelectionSort\SelectionSort.csproj", "{10572647-81D7-420E-8581-B7972759225A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelectionSort", "Algorithms\Sortings\Primitive\SelectionSort\SelectionSort.csproj", "{10572647-81D7-420E-8581-B7972759225A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertionSort", "Algorithms\Sortings\Primitive\InsertionSort\InsertionSort.csproj", "{0FF6AAE4-005E-4530-AF25-068240F2403F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{10572647-81D7-420E-8581-B7972759225A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10572647-81D7-420E-8581-B7972759225A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10572647-81D7-420E-8581-B7972759225A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FF6AAE4-005E-4530-AF25-068240F2403F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF6AAE4-005E-4530-AF25-068240F2403F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF6AAE4-005E-4530-AF25-068240F2403F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FF6AAE4-005E-4530-AF25-068240F2403F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +86,7 @@ Global
 		{39144EDA-2EE7-4445-BF32-AA1F0650B6D9} = {DD758548-4980-4809-993B-39D8D65F0544}
 		{7B496078-E861-4885-A7FE-17C78265EAB8} = {39144EDA-2EE7-4445-BF32-AA1F0650B6D9}
 		{10572647-81D7-420E-8581-B7972759225A} = {39144EDA-2EE7-4445-BF32-AA1F0650B6D9}
+		{0FF6AAE4-005E-4530-AF25-068240F2403F} = {39144EDA-2EE7-4445-BF32-AA1F0650B6D9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {94113632-9497-41AD-B93E-B4BD2341E533}

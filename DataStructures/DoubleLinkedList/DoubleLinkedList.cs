@@ -7,6 +7,7 @@ doubleLinkedList.Add(3);
 doubleLinkedList.Add(4);
 doubleLinkedList.Add(5);
 doubleLinkedList.Add(6);
+doubleLinkedList.Delete(3);
 doubleLinkedList.WalkToList();
 
 
@@ -47,6 +48,32 @@ class DoubleLinkedList<T>
         count++;
     }
 
+
+    public void Delete(T data)
+    {
+        DoubleNode<T> prev = null;
+        DoubleNode<T> cur = head;
+
+        while (cur != null)
+        {
+            if (cur.Data.Equals(data))
+            {
+                if (prev == null)
+                {
+                    head = cur.Next;
+                }
+                else
+                {
+                    prev.Next = cur.Next;
+                    cur.Next.Prev = prev;
+                }
+            }
+            prev = cur;
+            cur = cur.Next;
+        }
+
+    }
+
     public void WalkToList()
     {
         
@@ -85,13 +112,6 @@ class DoubleLinkedList<T>
             
 
         } while (key.Key != ConsoleKey.Escape);
-        /*
-        var current = head;
-        while (current != null)
-        {
-            Console.WriteLine(current.Data);
-            current = current.Next;
-        }
-        */
+        
     }
 }

@@ -1,12 +1,39 @@
-﻿using System.IO.Pipes;
+﻿string s = "(3 + 45)";
 
-Stack<string> stack = new Stack<string>();
-stack.Push("Саша");
-stack.Push("Миша");
-stack.Push("Миша");
+Dictionary<char, char> dic = new Dictionary<char, char>()
+{
+    { ')', '(' },
+    { ']', '[' }, 
+    { '}', '{' },
+};
+var stack = new Stack<string>();
 
+foreach (char s1 in s)
+{
+    if (dic.ContainsValue(s1))
+    {
+        stack.Push(s1.ToString());
+    }
+    else if (!stack.IsEmpty && dic.ContainsKey(s1) && stack.Last() == dic[s1].ToString())
+    {
+        stack.Pop();
+    }
+    else if(!stack.IsEmpty && dic.ContainsKey(s1) && stack.Last() != dic[s1].ToString())
+    {
+        stack.Push(s1.ToString());
+    }
+    
+}
 
-
+Console.WriteLine(s);
+if (stack.IsEmpty)
+{
+    Console.WriteLine("Correct placement!");
+}
+else
+{
+    Console.WriteLine("Uncorrect placement!");
+}
 
 
 public class Stack<T>
@@ -53,6 +80,16 @@ public class Stack<T>
             Resize(items.Length - 10);
 
         return item;
+    }
+
+    public T Last()
+    {
+        if (IsEmpty)
+            throw new InvalidOperationException("Стек пуст");
+        else
+        {
+            return items[count-1];
+        }
     }
 
     public void Resize(int max)

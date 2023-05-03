@@ -1,14 +1,18 @@
-﻿Queue<string> queue = new Queue<string>();
+﻿using System.Reflection.Metadata.Ecma335;
+
+Queue<string> queue = new Queue<string>();
 queue.Enqueue("Ann");
 queue.Enqueue("Lisa");
 
 var current = queue.head;
 do
 {
-    Console.WriteLine(current);
+    Console.WriteLine(current.Data);
     current = current.Next;
 } while (current != null);
 
+Console.WriteLine(queue.Peek().Data);
+Console.WriteLine(queue.Peek().Data);
 
 class Node<T>
 {
@@ -24,7 +28,7 @@ class Queue<T>
 {
     public Node<T> head; 
     public Node<T> tail;
-    int count = 0; 
+    public int count = 0; 
 
 
     public void Enqueue(T data)
@@ -38,5 +42,26 @@ class Queue<T>
             tempNode.Next = tail;
         count++;
     }
+
+    public Node<T> Peek()
+    {
+        
+        if (!isEmpty)
+        {
+            Node<T> firstInQueue = head;
+            head = head.Next;
+            count--;
+            return firstInQueue;
+        }
+        else
+        {
+            throw new InvalidOperationException("Очередь пуста");
+        }
+
+        
+        
+    }
+
+    public bool isEmpty => count == 0;
 }
 

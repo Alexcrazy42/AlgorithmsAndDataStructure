@@ -49,24 +49,17 @@ public class LinkedList<T>
         {
             if (current.Data.Equals(data))
             {
-                // Если узел в середине или в конце
                 if (previous != null)
                 {
-                    // убираем узел current, теперь previous ссылается не на current, а на current.Next
                     previous.Next = current.Next;
 
-                    // Если current.Next не установлен, значит узел последний,
-                    // изменяем переменную tail
                     if (current.Next == null)
                         tail = previous;
                 }
                 else
                 {
-                    // если удаляется первый элемент
-                    // переустанавливаем значение head
                     head = head.Next;
 
-                    // если после удаления список пуст, сбрасываем tail
                     if (head == null)
                         tail = null;
                 }
@@ -82,14 +75,16 @@ public class LinkedList<T>
 
     public int Count { get { return count; } }
     public bool IsEmpty { get { return count == 0; } }
-    // очистка списка
+    
+
     public void Clear()
     {
         head = null;
         tail = null;
         count = 0;
     }
-    // содержит ли список элемент
+    
+
     public bool Contains(T data)
     {
         Node<T> current = head;
@@ -101,7 +96,8 @@ public class LinkedList<T>
         }
         return false;
     }
-    // добвление в начало
+    
+
     public void AppendFirst(T data)
     {
         Node<T> node = new Node<T>(data);

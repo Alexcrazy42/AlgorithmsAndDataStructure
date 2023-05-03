@@ -58,13 +58,29 @@ class DoubleLinkedList<T>
             key = Console.ReadKey();
             if(key.Key == ConsoleKey.RightArrow)
             {
-                Console.WriteLine(current.Next.Data);
-                current = current.Next;
+                if (current.Next != null)
+                {
+                    Console.WriteLine(current.Next.Data);
+                    current = current.Next;
+                }
+                else
+                {
+                    Console.WriteLine($"Попытка выйти за пределы массива справа! Ты все еще в {current.Data}");
+                }
+
             }
             if (key.Key == ConsoleKey.LeftArrow)
             {
-                Console.WriteLine(current.Prev.Data);
-                current = current.Prev;
+                if (current.Prev != null)
+                {
+                    Console.WriteLine(current.Prev.Data);
+                    current = current.Prev;
+                }
+                else
+                {
+                    Console.WriteLine($"Попытка выйти за пределы массива слева! Ты все еще в {current.Data}");
+                }
+                
             }
             
 
